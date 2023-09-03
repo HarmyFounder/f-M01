@@ -26,13 +26,13 @@ public class ProductService {
         return productRepository.findByPrice(price);
     }
 
-    public Product create(Product product){
-        return productRepository.save(product);
+    public void create(Product product){
+        productRepository.save(product);
     }
 
-    public Product update(Product productToBeUpdated, Product updatedProduct){
+    public void update(Product productToBeUpdated, Product updatedProduct){
         BeanUtils.copyProperties(updatedProduct, productToBeUpdated, "id");
-        return productRepository.save(productToBeUpdated);
+        productRepository.save(productToBeUpdated);
     }
 
     public void delete(Product product){
