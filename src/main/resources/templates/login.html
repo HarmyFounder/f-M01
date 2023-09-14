@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="form-center">
+    <h4>Авторизация</h4>
+    <form th:action="@{/login}" th:method="POST">
+        Эл. почта: <input type="email" name="username"><br><br>
+        Пароль: <input type="password" name="password"><br><br>
+        <input type="submit" value="Вход"/>
+    </form>
+    <a th:href="@{/registration}">Зарегистрироваться</a>
+</div>
+<style>
+    .form-center  {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+</style>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>profile</title>
+</head>
+<body>
+<p th:text="${user.getEmail()}"></p>
+<p th:text="${user.getName()}"></p>
+<p th:text="${user.getProducts()}"></p>
+<div th:each="product : ${user.getProducts()}">
+    <a th:href="@{/products/{id}(id=${product.getId()})}" th:text="${product.getTitle()}"></a>
+</div>
+
+</body>
+</html>

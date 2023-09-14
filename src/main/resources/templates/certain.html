@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title th:text="${product.getTitle()}"></title>
+</head>
+<body>
+<p th:text="${product.getTitle()}"></p>
+<p th:text="${product.getId()}"></p>
+<p th:text="${product.getAuthor().getName()}"></p>
+<p th:text="${product.getAuthor().getEmail()}"></p>
+
+<form th:method="DELETE" th:action="@{/products/{id}(id=${product.getId()})}">
+  <input type="submit" value="delete!">
+</form>
+
+</body>
+</html>
