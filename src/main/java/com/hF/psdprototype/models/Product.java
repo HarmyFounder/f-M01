@@ -1,10 +1,10 @@
 package com.hF.psdprototype.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
+//import jakarta.persistence.Entity;
+//import jakarta.persistence.GeneratedValue;
+//import jakarta.persistence.GenerationType;
+//import jakarta.persistence.Id;
+import javax.persistence.*;
 @Entity
 public class Product {
     @Id
@@ -15,7 +15,24 @@ public class Product {
     private String type;
     private double price;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn
+    private User author;
+
+
+    public Product(String title) {
+        this.title = title;
+    }
+
     public Product() {
+    }
+
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
     }
 
     public String getTitle() {
